@@ -1,0 +1,24 @@
+version: "3.8"
+services:
+  booking-api:
+    image: booking-api
+    build: ./backend
+    container_name: booking_api
+    init: true
+    networks:
+      - frontend
+    ports:
+      - "3000:3000"
+  booking-client:
+    image: booking-client
+    build: ./frontend
+    container_name: booking_client
+    init: true
+    volumes:
+      - ./frontend:/usr/src/app
+    networks:
+      - frontend
+    ports:
+      - "8080:8080"
+networks:
+  frontend:
