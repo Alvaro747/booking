@@ -27,6 +27,7 @@ export type BookingFormData = {
   hotelId: string;
   paymentIntentId: string;
   totalCost: number;
+  hola: string;
 };
 
 const BookingForm = ({ currentUser, paymentIntent }: Props) => {
